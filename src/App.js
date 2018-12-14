@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
-import NavigationDesktop from './Components/NavigationDesktop';
+import Navigation from './Components/Navigation';
 
 class App extends Component {
 
@@ -17,7 +17,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <NavigationDesktop/>
+                <Navigation/>
                 <div className="wrapper">
                     <Main/>
                 </div>
