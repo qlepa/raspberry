@@ -50,8 +50,8 @@ class Main extends Component {
                 <h2 ref={subtitle => this.subtitle = subtitle}>Are you a Raspberry Knight?</h2>
                 {/*<button onClick={this.closeModal}>X</button>*/}
                 <form className="content__form">
-                    <input type="text" value="email"/>
-                    <input type="text"/>
+                    <input type="text" placeholder="Email"/>
+                    <input type="text" placeholder="Password"/>
                     <button>log in</button>
                 </form>
                 </div>

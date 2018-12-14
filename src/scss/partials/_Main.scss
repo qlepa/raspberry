@@ -15,9 +15,13 @@
 }
 .main__modal {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  //width: 25%;
+  height: 300px;
+  top: 35%;
+  left: 35%;
   background-color: #ffffff;
+  font-family: 'aleo', 'arial', Serif;
+  text-align: center;
 }
 .overlay {
   position: fixed;
@@ -29,10 +33,11 @@
 }
 .main__modal__content {
   padding: 10px;
-  display: flex;
-  flex-direction: column;
 }
 .content__form {
+  height: 200px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
