@@ -1,7 +1,8 @@
 .main__title {
-  font-family: 'bakeryregular','aleo', 'arial', serif;
+  font-family: 'bakeryregular', 'aleo', 'arial', serif;
   font-size: 80px;
 }
+
 .main__btn {
   width: 195px;
   background: none;
@@ -11,4 +12,27 @@
   padding: 10px;
   font-family: 'aleo', 'arial', serif;
   font-weight: bold;
+}
+.main__modal {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  background-color: #ffffff;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.79);
+}
+.main__modal__content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.content__form {
+  display: flex;
+  flex-direction: column;
 }

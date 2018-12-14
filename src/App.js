@@ -6,15 +6,6 @@ import Navigation from './Components/Navigation';
 import Popup from './Components/Popup';
 
 class App extends Component {
-
-    // componentDidMount() {
-    //     axios.post('https://recruitment-api.pyt1.stg.jmr.pl/login', {
-    //         headers: {
-    //             ContentType: 'application/json'
-    //         }
-    //     });
-    // }
-
     render() {
         return (
             <div className="container">
