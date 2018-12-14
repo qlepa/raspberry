@@ -20,6 +20,7 @@ class Navigation extends Component {
     }
     changeHamburgerClass = () => {
         if (this.state.openMenu) return "change ";
+        return ""
     }
 
     render() {
@@ -35,7 +36,7 @@ class Navigation extends Component {
                             <div className="bar3"></div>
                         </div>
                     </div>
-                    <ul className={`${this.changeHamburgerClass()} header__nav__list`}>
+                    <ul className={`${this.changeHamburgerClass()}header__nav__list`}>
                         <li className="list__item" onClick={this.handleMenu}>
                             about
                         </li>
