@@ -1,27 +1,50 @@
 .main__title {
   font-family: 'bakeryregular', 'aleo', 'arial', serif;
-  font-size: 100px;
+  font-size: 75px;
+  @media screen and (min-width: 350px) {
+    font-size: 100px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 150px;
+  }
 }
 .main__btn {
-  width: 195px;
+  font-size: 12px;
+  width: 140px;
+  padding: 10px;
   background: none;
   color: #ffffff;
   border: 2px solid #ffffff;
   border-radius: 24px;
-  padding: 10px;
   font-family: 'aleo', 'arial', serif;
   font-weight: bold;
   text-transform: uppercase;
   outline: none;
   cursor: pointer;
+  @media screen and (min-width: 350px) {
+    font-size: auto;
+    width: 195px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 18px;
+    width: 230px;
+  }
 }
 .main__modal {
-  position: absolute;
+  //position: absolute;
   width: 27.5%;
   min-width: 306.63px;
-  height: 300px;
-  top: 35%;
-  left: 35%;
+  height: 40%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  //top: 35%;
+  //left: 35%;
   background-color: #ffffff;
   font-family: 'aleo', 'arial', Serif;
   text-align: center;
@@ -68,6 +91,6 @@
 }
 .model__content__title {
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 24px;
 }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Modal from "react-modal";
 import axios from "axios";
 
+Modal.setAppElement('#root');
 
 class Main extends Component {
     constructor() {
@@ -23,7 +24,6 @@ class Main extends Component {
     }
 
     afterOpenModal() {
-        // references are now sync'd and can be accessed.
         this.subtitle.style.color = '#000';
     }
 

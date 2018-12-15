@@ -16,7 +16,6 @@ class Navigation extends Component {
         this.setState({
             openMenu: this.state.openMenu ? false : true
         })
-        console.log(this.state.openMenu);
     }
     changeHamburgerClass = () => {
         if (this.state.openMenu) return "change ";
