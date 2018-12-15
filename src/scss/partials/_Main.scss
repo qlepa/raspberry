@@ -1,8 +1,7 @@
 .main__title {
   font-family: 'bakeryregular', 'aleo', 'arial', serif;
-  font-size: 80px;
+  font-size: 100px;
 }
-
 .main__btn {
   width: 195px;
   background: none;
@@ -12,16 +11,21 @@
   padding: 10px;
   font-family: 'aleo', 'arial', serif;
   font-weight: bold;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
 }
 .main__modal {
   position: absolute;
-  //width: 25%;
+  width: 27.5%;
+  min-width: 306.63px;
   height: 300px;
   top: 35%;
   left: 35%;
   background-color: #ffffff;
   font-family: 'aleo', 'arial', Serif;
   text-align: center;
+  outline: none;
 }
 .overlay {
   position: fixed;
@@ -32,7 +36,11 @@
   background-color: rgba(0, 0, 0, 0.79);
 }
 .main__modal__content {
-  padding: 10px;
+  color: #000000;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  width: 100%;
 }
 .content__form {
   height: 200px;
@@ -40,4 +48,26 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+.content__input {
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+.main__btn--red {
+  background-color: #a83a5e;
+  margin-bottom: 40px;
+}
+.model__content__title {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 24px;
 }

@@ -9,7 +9,9 @@ class Main extends Component {
         this.state = {
             modalIsOpen: false,
             userMail: '',
-            userPassword: ''
+            userPassword: '',
+            loggedIn: '',
+            serverMessage: ''
         };
         this.openModal = this.openModal.bind(this);
         this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -26,7 +28,7 @@ class Main extends Component {
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        this.setState({modalIsOpen: false, loggedIn: ''});
     }
 
     handleMail = e => {
@@ -36,17 +38,74 @@ class Main extends Component {
     }
     handlePassword = e => {
         this.setState({
-            userMail: e.target.value
+            userPassword: e.target.value
         })
     }
+
+    serverMessageNone() {
+        if (this.state.loggedIn === '') {
+            return (
+                <div className="main__modal__content">
+                    <h2 className="model__content__title" ref={subtitle => this.subtitle = subtitle}>Are you a
+                        Raspberry Knight?</h2>
+                    <form className="content__form" onSubmit={this.postLogIn}>
+                        <input className="content__input" type="email" placeholder="Email"
+                               onChange={this.handleMail}/>
+                        <input className="content__input" type="password" placeholder="Password"
+                               onChange={this.handlePassword}/>
+                        <button className="main__btn main__btn--red" type="submit">log in</button>
+                    </form>
+                </div>
+            )
+        }
+    }
+
+    serverMessageError() {
+        if (this.state.loggedIn === 'error') {
+            return (
+                <div className="main__modal__content">
+                    <h2 className="model__content__title" ref={subtitle => this.subtitle = subtitle}>Are you a
+                        Raspberry Knight?</h2>
+                    <h3>{this.state.serverMessage}</h3>
+                    <form className="content__form" onSubmit={this.postLogIn}>
+                        <input className="content__input" type="email" placeholder="Email"
+                               onChange={this.handleMail}/>
+                        <input className="content__input" type="password" placeholder="Password"
+                               onChange={this.handlePassword}/>
+                        <button className="main__btn main__btn--red" type="submit">log in</button>
+                    </form>
+                </div>
+            )
+        }
+    }
+
+    serverMessageOk() {
+        if (this.state.loggedIn === 'ok') {
+            return (
+                <div className="main__modal__content">
+                    <h2 className="model__content__title" ref={subtitle => this.subtitle = subtitle}>Are you a
+                        Raspberry Knight?</h2>
+                    <h3>{this.state.serverMessage}</h3>
+                </div>
+            )
+        }
+    }
+
     postLogIn = e => {
         e.preventDefault()
 
-        const req = axios.post('https://recruitment-api.pyt1.stg.jmr.pl/login', JSON.stringify({
-            login: this.state.userMail,
-            password: this.state.userPassword
-        }))
-            .then((res) => console.log(res))
+        axios.post(
+            'https://recruitment-api.pyt1.stg.jmr.pl/login',
+            {
+                login: this.state.userMail,
+                password: this.state.userPassword
+            })
+            .then((res) => {
+                this.setState({
+                    loggedIn: res.data.status,
+                    serverMessage: res.data.message
+                })
+            })
     }
 
     render() {
@@ -61,14 +120,9 @@ class Main extends Component {
                     onAfterOpen={this.afterOpenModal}
                     onRequestClose={this.closeModal}
                 >
-                    <div className="main__modal__content">
-                        <h2 ref={subtitle => this.subtitle = subtitle}>Are you a Raspberry Knight?</h2>
-                        <form className="content__form" onSubmit={this.postLogIn}>
-                            <input type="email" placeholder="Email" onChange={this.handleMail}/>
-                            <input type="password" placeholder="Password" onChange={this.handlePassword}/>
-                            <button type="submit">log in</button>
-                        </form>
-                    </div>
+                    {this.serverMessageNone()}
+                    {this.serverMessageError()}
+                    {this.serverMessageOk()}
                 </Modal>
             </div>
         )
