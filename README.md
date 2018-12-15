@@ -1,4 +1,14 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Developed by Tomasz Klepacki
+
+Landing page with API authorization prepared from psd project. 
+
+Used:
+- Create React App
+- Axios
+- React-modal
+- Node Scss
+
+
 
 ## Available Scripts
 
